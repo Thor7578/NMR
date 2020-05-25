@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+
+</head>
+<body>
+<div class="homepage">
+    <div id="keaElement"><a href="/">KEA</a>
+    </div>
+    <div id="studentElement"><a href="/studentList">Students</a>
+    </div>
+    <div id="courseElement">Courses
+    </div>
+
+</div>
+<div id="formCreate">
+    <h1>Update student</h1>
+    <form action="#" th:action="@{/updateStudentSubmit}" th:object="${student}" method="post">
+        <p>First name: <input type="text" th:field="*{firstName}" /></p>
+        <p>Last name: <input type="text" th:field="*{lastName}" /></p>
+        <p>Enrollment date: <input type="date" th:field="*{enrollmentDate}" /></p>
+        <p>CPR: <input type="text" th:field="*{cpr}" /></p>
+        <p><input id="CreateButton" type="submit" value="Update" /></p>
+    </form>
+</div>
+</body>
+</html>

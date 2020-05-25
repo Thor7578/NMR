@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Administration</title>
+    <!-- stylesheet -->
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+    <!-- TODO: MENU -->
+    <div class="homepage">
+        <div id="keaElement"><a href="/">KEA</a>
+        </div>
+        <div id="studentElement"><a href="/studentList">Students</a>
+        </div>
+        <div id="courseElement">Courses
+        </div>
+
+    </div>
+    <!-- TODO: Table of students -->
+    <div class="container">
+        <h1>Student administration</h1>
+
+        <table>
+            <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Enrollment</th>
+                <th></th>
+            </tr>
+            <tr th:each="student : ${students}">
+                <td th:text="${student.firstName}"></td>
+                <td th:text="${student.lastName}"></td>
+                <td th:text="${student.enrollmentDate}"></td>
+                <td><a th:href="@{/student(cpr=${student.cpr})}"><button class="btn btn-details">Details</button></a>
+                <a th:href="@{/updateStudent(cpr=${student.cpr})}"><button class="btn btn-ed">Edit</button></a>
+                <a th:href="@{/deleteStudentPage(cpr=${student.cpr})}"><button class="btn btn-del">Delete</button></a>
+                </td>
+            </tr>
+
+
+            <a th:href="@{/addStudent}"><button class="btn btn-create">Add student </button></a>
+        </table>
+    </div>
+</body>
+</html>

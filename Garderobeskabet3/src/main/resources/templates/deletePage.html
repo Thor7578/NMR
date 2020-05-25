@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+
+</head>
+<body>
+<div class="homepage">
+    <div id="keaElement"><a href="/">KEA</a>
+    </div>
+    <div id="studentElement"><a href="/studentList">Students</a>
+    </div>
+    <div id="courseElement">Courses
+    </div>
+
+</div>
+
+    <div class="deleteStudentConfirm">
+        <h1>Delete</h1>
+
+        <h1>Are you sure you want to delete</h1>
+
+        <p th:text="*{student.firstName}"></p>
+        <p th:text="*{student.lastName}" ></p>
+        <a th:href="@{/deleteStudent(cpr=${student.cpr})}"><button class="btn btn-del">Delete</button></a>
+        <a th:href="@{/index}"><button class="btn btn-create">Pls no.</button></a>
+    </div>
+</div>
+</body>
+</html>

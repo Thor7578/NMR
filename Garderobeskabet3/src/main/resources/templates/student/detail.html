@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student details</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+
+</head>
+<body>
+<div class="homepage">
+    <div id="keaElement"><a href="/">KEA</a>
+    </div>
+    <div id="studentElement"><a href="/studentList">Students</a>
+    </div>
+    <div id="courseElement">Courses
+    </div>
+
+</div>
+<div class="studentDetailsList">
+    <h1>Details</h1>
+First name:<p class="studentDetails" th:text=" ${studentFirstName}"></p><br>
+Last name:<p class="studentDetails"th:text=" ${studentLastName}"></p><br>
+Enrollment Date:<p class="studentDetails"th:text=" ${studentEnrollmentDate}"></p><br>
+CPR: <p class="studentDetails"th:text=" ${studentCPR}">
+</div>
+</body>
+</html>
